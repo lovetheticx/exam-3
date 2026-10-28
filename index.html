@@ -3,9 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Countries</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script type="module" src="./js/app.js"></script>
   </head>
   <body>
-    <h1>IMTIHON</h1>
+    <header>
+      <div class="navbar container">
+        <h1 class="logo">Where in the world?</h1>
+        <button id="dark-button" class="mode-toggle" type="button">
+          <img src="./images/moon.svg" alt="" />
+          <span>Dark Mode</span>
+        </button>
+        <button id="light-button" class="mode-toggle hidden" type="button">
+          <img src="./images/moon-dark.svg" alt="" />
+          <span>Light Mode</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="search">
+        <form id="search-form" class="search-box">
+          <img src="./images/search.svg" alt="" />
+          <input
+            name="search-text"
+            type="search"
+            placeholder="Search for a country..."
+          />
+        </form>
+
+        <div class="region-filter">
+          <button id="region-toggle" class="region-toggle" type="button">
+            <span>Filter by Region</span>
+            <img
+              class="region-arrow region-arrow-light"
+              src="./images/arrow.svg"
+              alt=""
+            />
+            <img
+              class="region-arrow region-arrow-dark"
+              src="./images/arrow-white.svg"
+              alt=""
+            />
+          </button>
+          <div id="region-options" class="region-options" hidden>
+            <button class="region-button active" type="button">All</button>
+            <button class="region-button" type="button">Africa</button>
+            <button class="region-button" type="button">Americas</button>
+            <button class="region-button" type="button">Asia</button>
+            <button class="region-button" type="button">Europe</button>
+            <button class="region-button" type="button">Oceania</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="country-list" class="country-list"></section>
+      <p id="no-results" class="no-results" hidden>No countries found.</p>
+    </main>
   </body>
 </html>
